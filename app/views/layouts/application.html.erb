@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kvb</title>
+  <%= stylesheet_link_tag  "application", :media => "screen and (min-device-width: 480px)" %>
+  <%= stylesheet_link_tag  "phone", :media => "only screen and (max-device-width: 480px)" %>
+
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

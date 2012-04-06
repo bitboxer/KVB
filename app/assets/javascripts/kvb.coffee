@@ -107,6 +107,9 @@ $ ->
     $(".bothFilterLink").addClass("selectedFilter")
     kvb.updateFilter "both"
 
+  $(".search").submit ->
+    false
+
   $(".searchField").keyup ->
     kvb.updateSearch $(".searchField").val()
 

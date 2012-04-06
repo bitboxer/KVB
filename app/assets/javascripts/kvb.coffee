@@ -57,18 +57,28 @@ class Kvb
   updateFilter: (newType) =>
     filter = newType
     @fillList()
+    $(".result").animate({ scrollTop: 0 }, "fast");
 
   updateSearch: (newSearch) =>
     return if newSearch == search
     search = newSearch.toLowerCase()
     @fillList()
+    $(".result").animate({ scrollTop: 0 }, "fast");
+
+  distanceToString: (distance) =>
+    if (distance == Number.MAX_VALUE)
+      ""
+    else if (distance < 1)
+      "#{Math.round(distance * 1000)} m"
+    else
+      "#{distance.toFixed(2)} km"
 
   fillList: =>
-    console.log search
     $(".result").empty()
     for i in data
-      if (i["type"] == filter || i["type"] == "both") && (search == "" || i["station"].toLowerCase().indexOf(search) != -1)
-        $(".result").append("<li><a href='http://www.kvb-koeln.de/qr/#{i["kvb-id"]}'>#{i["station"]}</a></li>")
+      if (i["type"] == filter || i["type"] == "both" || filter == "both") && (search == "" || i["station"].toLowerCase().indexOf(search) != -1)
+        distance = if i["distance"]? then "<span class='distance'>#{@distanceToString(i["distance"])}</span>" else ""
+        $(".result").append("<li><a href='http://www.kvb-koeln.de/qr/#{i["kvb-id"]}'>#{i["station"]}#{distance}</a></li>")
 
 if !Number.prototype.toRad?
   Number.prototype.toRad = ->
@@ -83,13 +93,18 @@ $ ->
       kvb.fillList
 
   $(".busFilterLink").click ->
-    console.log "cklick!"
+    $(".selectedFilter").removeClass("selectedFilter")
+    $(".busFilterLink").addClass("selectedFilter")
     kvb.updateFilter "bus"
 
   $(".bahnFilterLink").click ->
+    $(".selectedFilter").removeClass("selectedFilter")
+    $(".bahnFilterLink").addClass("selectedFilter")
     kvb.updateFilter "bahn"
 
   $(".bothFilterLink").click ->
+    $(".selectedFilter").removeClass("selectedFilter")
+    $(".bothFilterLink").addClass("selectedFilter")
     kvb.updateFilter "both"
 
   $(".searchField").keyup ->

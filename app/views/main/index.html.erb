@@ -1,9 +1,13 @@
-<a href="#" class='bahnFilterLink'>Bahn</a>
-<a href="#" class='busFilterLink'>Bus</a>
-<a href="#" class='bothFilterLink'>Beides</a>
+<div class="head">
+  <div class="headSelector">
+    <a href="#" class='bahnFilterLink selectedFilter'>Bahn</a>
+    <a href="#" class='busFilterLink'>Bus</a>
+    <a href="#" class='bothFilterLink'>Beides</a>
+  </div>
+</div>
 
-<form>
-  <input class="searchField"> <a href="#" class='delete'>(x)</a>
+<form class='search'>
+  <%= image_tag "search.png", class: "lupe" %> <input class="searchField"> <a href="#" class='delete'><%= image_tag "cancel.png", class:"cancel" %></a>
 </form>
 
 <ul class='result'>

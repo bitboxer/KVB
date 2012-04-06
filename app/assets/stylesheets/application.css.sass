@@ -1,0 +1,51 @@
+@import "main.css.sass"
+
+body
+  font-size: 16px
+
+.content
+  width: 600px
+
+.head
+  padding-top: 50px
+  padding-bottom: 20px
+
+.headSelector
+  width: 601px
+  @include border-radius(6px, 6px)
+
+.headSelector a.bahnFilterLink
+  @include border-left-radius(6px)
+
+.headSelector a.bothFilterLink
+  @include border-right-radius(6px)
+
+.headSelector a
+  padding: 5px
+  width: 190px
+
+form.search
+  @include border-radius(6px, 6px)
+  padding: 15px
+  margin-bottom: 20px
+
+  img.lupe
+    margin-right: 10px
+  img.cancel
+    margin-left: 10px
+  input
+    font-size: 18px
+    width: 500px
+
+.result
+  margin: 5px
+  padding: 0px
+  @include border-radius(6px, 6px)
+  height: 300px
+
+  li
+    padding: 10px 20px
+
+  a
+    .distance
+      font-size: 12px

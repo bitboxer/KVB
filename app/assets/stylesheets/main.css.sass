@@ -1,0 +1,68 @@
+@import "compass/css3"
+
+body
+  background-color: #505050
+  background: url("background.jpg")  no-repeat center center fixed
+  background-size: cover
+
+.content
+  margin-left: auto
+  margin-right: auto
+
+.head
+  width: 100%
+
+.headSelector a
+  color: black
+  text-decoration: none
+  display: block
+  float: left
+  text-align: center
+  @include background-image(linear-gradient(#FFD780, #FFDD33))
+
+.headSelector a.selectedFilter
+  @include background-image(linear-gradient(#FFD600,#F5A000))
+
+.headSelector:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+
+form.search
+  background-color: black
+  background-color: rgba(0,0,0,0.6)
+
+  input
+    position: relative
+
+.result
+  background-color: black
+  background-color: rgba(0,0,0,0.6)
+  color: #eeeeee
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+  list-style-type: none
+  border: 1px solid black
+
+  li
+    @include background-image(linear-gradient(#efefef,#9f9f9f))
+    border-bottom: 1px solid black
+    border-top: 1px solid #eee
+    overflow: hidden
+ 
+  a
+    overflow: hidden
+    color: black
+    width: 100%
+    display: block
+    text-decoration: none
+
+    .distance
+      float: right
+      color: #5a5a5a
+
+.busFilterLink
+  border-left: 2px solid black
+  border-right: 2px solid black

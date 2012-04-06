@@ -59,5 +59,8 @@ module Kvb
     config.assets.paths << "#{Rails.root}/app/assets/json"
 
     config.assets.precompile += %w( desktop.css phone.css )
+
+    config.cache_store = :dalli_store
+
   end
 end

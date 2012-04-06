@@ -45,6 +45,7 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.1)
       compass (~> 0.12.0)
+    dalli (2.0.2)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
@@ -127,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
+  dalli
   heroku
   jquery-rails
   nokogiri

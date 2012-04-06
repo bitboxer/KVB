@@ -117,6 +117,12 @@ $ ->
     $(".searchField").val("")
     kvb.updateSearch ""
 
+  $(".impressumOpen a").click ->
+    $(".impressum").fadeIn(150)
+
+  $(".impressum .close").click ->
+    $(".impressum").fadeOut(150)
+
   setTimeout ( ->
     kvb.updateSearch $(".searchField").val()
   ), 100

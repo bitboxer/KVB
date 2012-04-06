@@ -58,6 +58,6 @@ module Kvb
 
     config.assets.paths << "#{Rails.root}/app/assets/json"
 
-    config.assets.precompile += %w( phone.css )
+    config.assets.precompile += %w( desktop.css phone.css )
   end
 end
